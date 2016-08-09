@@ -16,7 +16,7 @@ namespace MvcLibrary.Controllers
 
         public BooksController(ApplicationDbContext context)
         {
-            _context = context;    
+            _context = context;
         }
 
         // GET: Books
