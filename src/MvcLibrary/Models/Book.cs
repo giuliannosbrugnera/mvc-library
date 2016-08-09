@@ -8,6 +8,7 @@ namespace MvcLibrary.Models
         [Required]
         public string Title { get; set; }
         public int Year { get; set; }
+        [DataType(DataType.Currency)]
         public decimal Price { get; set; }
         public string Genre { get; set; }
 

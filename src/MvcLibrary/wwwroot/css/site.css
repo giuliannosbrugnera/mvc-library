@@ -49,8 +49,6 @@ textarea {
     }
 }
 
-.container {
-    width: auto;
-    max-width: 680px;
-    padding: 0 15px;
+.table > tbody > tr > td {
+    vertical-align: middle;
 }
