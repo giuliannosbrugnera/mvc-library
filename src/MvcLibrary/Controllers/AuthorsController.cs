@@ -16,7 +16,7 @@ namespace MvcLibrary.Controllers
 
         public AuthorsController(ApplicationDbContext context)
         {
-            _context = context;    
+            _context = context;
         }
 
         // GET: Authors
