@@ -11,7 +11,7 @@
         <h4>Book</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="Id" />
         <div class="form-group">
             <label asp-for="AuthorId" class="control-label col-md-2"></label>
             <div class="col-md-10">
@@ -49,14 +49,14 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <button type="submit" class="btn btn-success">Save <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button>
             </div>
         </div>
     </div>
 </form>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-primary" asp-action="Index"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> Back to List</a>
 </div>
 
 @section Scripts {

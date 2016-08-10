@@ -39,8 +39,8 @@
     
     <form asp-action="Delete">
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            <a asp-action="Index">Back to List</a>
+            <button class="btn btn-danger" type="submit">Delete <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+            <a class="btn btn-primary" asp-action="Index"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> Back to List</a>
         </div>
     </form>
 </div>
