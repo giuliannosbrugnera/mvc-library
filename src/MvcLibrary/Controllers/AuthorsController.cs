@@ -20,9 +20,18 @@ namespace MvcLibrary.Controllers
         }
 
         // GET: Authors
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Author.ToListAsync());
+            // Select all authors
+            var authors = from a in _context.Author select a;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                // Select the authors based on the searchString parameter
+                authors = authors.Where(b => b.Name.Contains(searchString));
+            }
+
+            return View(await authors.ToListAsync());
         }
 
         // GET: Authors/Details/5
