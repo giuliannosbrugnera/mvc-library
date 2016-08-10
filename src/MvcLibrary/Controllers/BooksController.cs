@@ -172,5 +172,10 @@ namespace MvcLibrary.Controllers
         {
             return _context.Book.Any(e => e.Id == id);
         }
+
+        //public async Task<IActionResult> Statistics()
+        //{
+
+        //}
     }
 }

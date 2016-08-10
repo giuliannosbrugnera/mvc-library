@@ -15,14 +15,14 @@ namespace MvcLibrary.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Minimalist web application to apply ASP.NET MVC and Entity Framework learning.";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Giulianno Sbrugnera";
 
             return View();
         }
