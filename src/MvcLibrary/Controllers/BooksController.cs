@@ -20,10 +20,18 @@ namespace MvcLibrary.Controllers
         }
 
         // GET: Books
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var applicationDbContext = _context.Book.Include(b => b.Author);
-            return View(await applicationDbContext.ToListAsync());
+            // Select all books
+            var books = from b in _context.Book.Include(b => b.Author) select b;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                // Select the books based on the searchString parameter
+                books = books.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(await books.ToListAsync());
         }
 
         // GET: Books/Details/5
