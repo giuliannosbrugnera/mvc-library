@@ -68,6 +68,11 @@ namespace MvcLibrary.Controllers
         public IActionResult Create()
         {
             ViewData["AuthorId"] = new SelectList(_context.Author, "Id", "Name");
+
+            // Use LINQ to get list of genres.
+            IQueryable<string> genreQuery = from b in _context.Book orderby b.Genre select b.Genre;
+            ViewData["Genre"] = new SelectList(genreQuery.Distinct().ToList());
+
             return View();
         }
 
@@ -84,7 +89,7 @@ namespace MvcLibrary.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewData["AuthorId"] = new SelectList(_context.Author, "Id", "Name", book.AuthorId);
+            ViewData["AuthorId"] = new SelectList(_context.Author, "Id", "Name", book.Author);
             return View(book);
         }
 
@@ -101,7 +106,7 @@ namespace MvcLibrary.Controllers
             {
                 return NotFound();
             }
-            ViewData["AuthorId"] = new SelectList(_context.Author, "Id", "Name", book.AuthorId);
+            ViewData["AuthorId"] = new SelectList(_context.Author, "Id", "Name", book.Author);
             return View(book);
         }
 
@@ -137,7 +142,7 @@ namespace MvcLibrary.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            ViewData["AuthorId"] = new SelectList(_context.Author, "Id", "Name", book.AuthorId);
+            ViewData["AuthorId"] = new SelectList(_context.Author, "Id", "Name", book.Author);
             return View(book);
         }
 
