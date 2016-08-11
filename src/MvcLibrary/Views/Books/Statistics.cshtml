@@ -1,0 +1,49 @@
+@model MvcLibrary.Models.BookStatistics
+
+@{
+    ViewData["Title"] = "Statistics";
+}
+
+<div class="page-header">
+    <h1>
+        @ViewData["Title"]
+        <small>
+            About all the library
+        </small>
+    </h1>
+</div>
+
+<div class="well well-lg">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorQuantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AuthorQuantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BookQuantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BookQuantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HighestPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HighestPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LowestPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LowestPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+    </dl>
+</div>

@@ -174,9 +174,35 @@ namespace MvcLibrary.Controllers
             return _context.Book.Any(e => e.Id == id);
         }
 
-        //public async Task<IActionResult> Statistics()
-        //{
+        // Will return: quantity of books, quantity of authors, most expensive book, cheapest book, sum of book's prices
+        public IActionResult Statistics()
+        {
+            // Returns the author quantity.
+            var author = from a in _context.Author select a;
+            int authorQuantity = author.Count();
 
-        //}
+            // Returns the book quantity.
+            var book = from b in _context.Book select b;
+            int bookQuantity = book.Count();
+
+            // Returns the book with the highest price
+            decimal highestPrice = book.Max(x => x.Price);
+
+            // Returns the book with the lowest price.
+            decimal lowestPrice = book.Min(x => x.Price);
+
+            // Returns the sum of the book's price
+            decimal totalPrice = book.Select(c => c.Price).Sum();
+
+            // Create new BookStatistics object, setting its attributes.
+            var bookStatistics = new BookStatistics();
+            bookStatistics.AuthorQuantity = authorQuantity;
+            bookStatistics.BookQuantity = bookQuantity;
+            bookStatistics.LowestPrice = lowestPrice;
+            bookStatistics.HighestPrice = highestPrice;
+            bookStatistics.TotalPrice = totalPrice;
+
+            return View(bookStatistics);
+        }
     }
 }

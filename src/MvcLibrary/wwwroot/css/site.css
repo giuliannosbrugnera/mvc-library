@@ -52,3 +52,7 @@ textarea {
 .table > tbody > tr > td {
     vertical-align: middle;
 }
+
+.well > dl {
+    margin-bottom: 0;
+}
