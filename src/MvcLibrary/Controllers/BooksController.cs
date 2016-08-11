@@ -36,6 +36,7 @@ namespace MvcLibrary.Controllers
 
             if (!String.IsNullOrEmpty(bookGenre))
             {
+                // Select the books based on the bookGenre parameter.
                 books = books.Where(x => x.Genre == bookGenre);
             }
 
