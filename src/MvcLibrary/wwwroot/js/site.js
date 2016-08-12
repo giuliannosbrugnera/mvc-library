@@ -3,5 +3,10 @@
     console.log("pathname: " + pathname);
 
     // Call the DataTables plugin.
-    $("table").dataTable();
+    $("table").dataTable({
+        // Disable sorting on last column, where the buttons reside
+        columnDefs: [
+            { orderable: false, targets: -1 }
+        ]
+    });
 });
