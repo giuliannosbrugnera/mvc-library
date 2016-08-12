@@ -190,11 +190,13 @@ namespace MvcLibrary.Controllers
             var book = from b in _context.Book select b;
             int bookQuantity = book.Count();
 
-            // Returns the book with the highest price
-            decimal highestPrice = book.Max(x => x.Price);
-
             // Returns the book with the lowest price.
             decimal lowestPrice = book.Min(x => x.Price);
+            var cheapestBook = book.First(x => x.Price == lowestPrice);
+
+            // Returns the book with the highest price
+            decimal highestPrice = book.Max(x => x.Price);
+            var mostExpensiveBook = book.First(x => x.Price == highestPrice);
 
             // Returns the sum of the book's price
             decimal totalPrice = book.Select(c => c.Price).Sum();
@@ -203,8 +205,8 @@ namespace MvcLibrary.Controllers
             var bookStatistics = new BookStatistics();
             bookStatistics.AuthorQuantity = authorQuantity;
             bookStatistics.BookQuantity = bookQuantity;
-            bookStatistics.LowestPrice = lowestPrice;
-            bookStatistics.HighestPrice = highestPrice;
+            bookStatistics.cheapestBook = cheapestBook;
+            bookStatistics.mostExpensiveBook = mostExpensiveBook;
             bookStatistics.TotalPrice = totalPrice;
 
             return View(bookStatistics);

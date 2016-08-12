@@ -10,13 +10,11 @@ namespace MvcLibrary.Models
         [Display(Name = "Quantity of Authors")]
         public int AuthorQuantity { get; set; }
 
-        [DataType(DataType.Currency)]
         [Display(Name = "Most expensive book")]
-        public decimal HighestPrice { get; set; }
+        public Book mostExpensiveBook { get; set; }
 
-        [DataType(DataType.Currency)]
         [Display(Name = "Cheapest book")]
-        public decimal LowestPrice { get; set; }
+        public Book cheapestBook { get; set; }
 
         [DataType(DataType.Currency)]
         [Display(Name = "Total book's price")]

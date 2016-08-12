@@ -28,16 +28,16 @@
             @Html.DisplayFor(model => model.BookQuantity)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.HighestPrice)
+            @Html.DisplayNameFor(model => model.mostExpensiveBook)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.HighestPrice)
+            @Html.DisplayFor(model => model.mostExpensiveBook.Title) &mdash; <strong>@Html.DisplayFor(model => model.mostExpensiveBook.Price)</strong>
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.LowestPrice)
+            @Html.DisplayNameFor(model => model.cheapestBook)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.LowestPrice)
+            @Html.DisplayFor(model => model.cheapestBook.Title) &mdash; <strong>@Html.DisplayFor(model => model.cheapestBook.Price)</strong>
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.TotalPrice)
