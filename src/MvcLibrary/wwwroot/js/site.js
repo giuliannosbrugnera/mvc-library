@@ -4,11 +4,8 @@
     var id = "";
 
     $.each(pathname, function (key, value) {
-        console.log("pathname: " + value);
         id += value + "-";
     });
-
-    console.log(id);
 
     // remove classes from all
     $(".nav.navbar-nav > li").removeClass("active");
