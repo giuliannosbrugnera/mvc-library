@@ -28,15 +28,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Home</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" id="-" class="navbar-brand">Home</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Books" asp-action="Index">Books</a></li>
-                    <li><a asp-area="" asp-controller="Authors" asp-action="Index">Authors</a></li>
-                    <li><a asp-area="" asp-controller="Books" asp-action="Statistics">Statistics</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li id="-Books-"><a asp-area="" asp-controller="Books" asp-action="Index">Books</a></li>
+                    <li id="-Authors-"><a asp-area="" asp-controller="Authors" asp-action="Index">Authors</a></li>
+                    <li id="-Books-Statistics-"><a asp-area="" asp-controller="Books" asp-action="Statistics">Statistics</a></li>
+                    <li id="-Home-About-"><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li id="-Home-Contact-"><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
